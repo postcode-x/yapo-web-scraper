@@ -4,7 +4,6 @@ import locale
 import number
 import pyodbc
 from datetime import datetime
-# import mysql.connector
 
 locale.setlocale(locale.LC_ALL, 'es_Cl.UTF8')
 

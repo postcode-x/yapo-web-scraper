@@ -27,7 +27,7 @@ def run_all():
         last_date_object = datetime.strptime(last_date[0][3], '%Y-%m-%d')
 
         if last_date_object.date() < now.date():
-            print('Executing auto scrapper')
+            print('Executing auto scraper')
             execute_autos()
         elif last_date_object.date() >= now.date():
             print('Cars up to date')
@@ -41,7 +41,7 @@ def run_all():
     if len(last_date) > 0:
         last_date_object = datetime.strptime(last_date[0][4], '%Y-%m-%d')
         if last_date_object.date() < now.date():
-            print('Executing real state scrapper')
+            print('Executing real state scraper')
             execute_terrenos()
         elif last_date_object.date() >= now.date():
             print('Real State up to date')

@@ -8,15 +8,6 @@ from datetime import datetime
 
 locale.setlocale(locale.LC_ALL, 'es_Cl.UTF8')
 
-'MySQL Server'
-'''myDB = mysql.connector.connect(
-  host="localhost",
-  user="root",
-  password="",
-  database="yapo_bbdd"
-)
-myCursor = myDB.cursor()'''
-
 'SQL Server'
 conn = pyodbc.connect('Driver={SQL Server};'
                       'Server=;'
@@ -104,12 +95,6 @@ def execute_autos():
                                 if "MT" or "AT" in result:
                                     tx = result
 
-                #sql = "INSERT INTO auto_chile (car_id, brand, price, year, km, tx) " \
-                #      "VALUES (%s, %s, %s, %s, %s, %s)"
-                #val = (car_id, brand, price, year, km, tx)
-                #myCursor.execute(sql, val)
-                #myDB.commit()
-
                 cursor.execute('SELECT yapo_id FROM Autos where yapo_id = ?', car_id)
 
                 if len(list(cursor)) == 1:
@@ -181,13 +166,6 @@ def execute_terrenos():
                     commune = com.text.strip()
 
                 #print(terreno_id, href, title, price, price_unit, measurement, measurement_unit, region, commune)
-
-                #sql = "INSERT INTO terreno_chile (terreno_id, href, title, price, price_unit, " \
-                #      "measurement, measurement_unit, region, commune) " \
-                #      "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
-                #val = (terreno_id, href, title, price, price_unit, measurement, measurement_unit, region, commune)
-                #myCursor.execute(sql, val)
-                #myDB.commit()
 
                 cursor.execute('SELECT yapo_id FROM Terrenos where yapo_id = ?', terreno_id)
 
